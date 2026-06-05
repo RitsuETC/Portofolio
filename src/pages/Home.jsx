@@ -49,7 +49,7 @@ function Home() {
               <div className="col-lg-6">
                 <div className="hero-image-wrapper mb-4">
                   <img 
-                    src="/gambar/logo ETC clear.png" 
+                    src="/gambar/Logo ETC clear.png" 
                     alt="Zaidan Portfolio" 
                     className="img-fluid rounded-5 shadow-lg main-hero-img"
                   />
