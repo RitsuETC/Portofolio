@@ -1,0 +1,45 @@
+.navbar {
+  width: 100%;
+  background-color: #2f2f2f;
+  padding: 0 20px;
+  display: flex; /* Memperbaiki typo dispaly */
+justify-content: center;
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: 1100px;
+  height: 70px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Biasanya logo di kiri, menu di kanan */
+gap: 10px;
+}
+
+.navbar-logo {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.navbar-menu {
+  display: flex;
+justify-content: center;
+align-items: center;
+  gap: 28px;
+}
+
+.navbar-menu a::after {
+  content: "";
+position: absolute;
+left: 0; /* Menghapus tanda kutip pada angka */
+bottom: -4px;
+width: 0%;
+height: 1px;
+background: white;
+transition: width 0.2s ease; /* Menambahkan 's' untuk detik */
+}
+.navbar-menu a:hover::after { /* Memperbaiki urutan pseudo-element */
+width: 100%;
+}

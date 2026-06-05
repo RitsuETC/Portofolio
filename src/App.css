@@ -1,0 +1,68 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0; /* Mengurangi padding agar layout lebih penuh dan modern */
+}
+
+/* Membuat semua gambar otomatis responsif dan tidak pecah */
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover; /* Memastikan gambar memenuhi area tanpa distorsi */
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.main-hero-img {
+  max-height: 400px;
+  width: 100%;
+  object-fit: contain;
+  background: #ffffff;
+  padding: 20px;
+  border: 1px solid #eee;
+}
+
+.hero-image-wrapper {
+  perspective: 1000px;
+}
+
+.main-hero-img:hover {
+  transform: translateY(-10px) rotateX(5deg);
+}
+
+.logo {
+  height: 4rem; /* Ukuran yang lebih standar untuk logo */
+  padding: 0.5rem;
+  will-change: filter;
+  transition: filter 300ms;
+  object-fit: contain; /* Memastikan logo tidak terpotong */
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
