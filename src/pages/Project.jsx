@@ -13,6 +13,13 @@ function Project() {
       title: "Portfolio",
       tech: "React, Bootstrap, CSS",
       description: "Website portfolio dengan halaman home, about, project, dan experience CRUD.",
+      link: "#/",
+    },
+    {
+      title: "E-Commerce ETC",
+      tech: "React, Vercel",
+      description: "Aplikasi toko online yang di-deploy di Vercel: https://etc-ecommerce-0.vercel.app/",
+      link: "https://etc-ecommerce-0.vercel.app/",
     },
   ];
 
@@ -67,7 +74,13 @@ function Project() {
             <div className="col-md-4" key={project.title}>
               <article className="project-card h-100">
                 <span className="project-tech">{project.tech}</span>
-                <h2 className="h4 mt-3">{project.title}</h2>
+                <h2 className="h4 mt-3">
+                  {project.link ? (
+                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-decoration-none text-dark">
+                      {project.title}
+                    </a>
+                  ) : project.title}
+                </h2>
                 <p className="text-secondary mb-0">{project.description}</p>
               </article>
             </div>

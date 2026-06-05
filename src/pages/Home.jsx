@@ -28,7 +28,7 @@ function Home() {
                 <span className="section-tag">Software Developer</span>
                 <h1 className="display-4 fw-bold mt-3 mb-3">
                   Halo, Saya Zaidan. <br />
-                  Membangun Solusi Digital.
+                  Membangun Emerge Tech Circle adalah jalanku.
                 </h1>
                 <p className="lead text-secondary mb-4">
                   Saya adalah seorang pengembang antarmuka web yang berfokus pada 

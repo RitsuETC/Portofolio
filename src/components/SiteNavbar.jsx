@@ -5,6 +5,7 @@ const navItems = [
   { to: "/experience", label: "Experience" },
   { to: "/project", label: "Project" },
   { to: "/about", label: "About" },
+  { to: "https://etc-ecommerce-0.vercel.app/", label: "E-Commerce", external: true },
 ];
 
 function SiteNavbar() {
@@ -31,6 +32,17 @@ function SiteNavbar() {
           <div className="collapse navbar-collapse justify-content-end" id="portfolioNavbar">
             <div className="navbar-nav gap-lg-2">
               {navItems.map((item) => (
+                item.external ? (
+                  <a
+                    key={item.to}
+                    href={item.to}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="nav-link nav-pill"
+                  >
+                    {item.label}
+                  </a>
+                ) : (
                 <NavLink
                   key={item.to}
                   to={item.to}
@@ -41,6 +53,7 @@ function SiteNavbar() {
                 >
                   {item.label}
                 </NavLink>
+                )
               ))}
             </div>
           </div>
