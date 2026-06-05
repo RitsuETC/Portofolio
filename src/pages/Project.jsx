@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import SiteNavbar from "../components/SiteNavbar";
 import "../components/NavbarFixed.css";
 import "../styles/layout.css";
@@ -13,7 +14,7 @@ function Project() {
       title: "Portfolio",
       tech: "React, Bootstrap, CSS",
       description: "Website portfolio dengan halaman home, about, project, dan experience CRUD.",
-      link: "#/",
+      link: "/",
     },
     {
       title: "E-Commerce ETC",
@@ -71,17 +72,23 @@ function Project() {
 
         <section className="row g-4 mb-5">
           {projects.map((project) => (
-            <div className="col-md-4" key={project.title}>
+            <div className="col-12 col-md-6 col-lg-4" key={project.title}>
               <article className="project-card h-100">
                 <span className="project-tech">{project.tech}</span>
                 <h2 className="h4 mt-3">
                   {project.link ? (
-                    <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-decoration-none text-dark">
-                      {project.title}
-                    </a>
+                    project.link.startsWith("http") ? (
+                      <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-decoration-none text-dark">
+                        {project.title}
+                      </a>
+                    ) : (
+                      <Link to={project.link} className="text-decoration-none text-dark">
+                        {project.title}
+                      </Link>
+                    )
                   ) : project.title}
                 </h2>
-                <p className="text-secondary mb-0">{project.description}</p>
+                <p className="text-secondary mb-0 line-clamp-desc">{project.description}</p>
               </article>
             </div>
           ))}
@@ -108,7 +115,7 @@ function Project() {
                   <article className="api-card h-100">
                     <p className="small text-uppercase text-secondary mb-2">API Card</p>
                     <h3 className="h5">{post.title}</h3>
-                    <p className="text-secondary mb-3">{post.body}</p>
+                    <p className="text-secondary mb-3 line-clamp-desc">{post.body}</p>
                     <div className="d-flex flex-wrap gap-2">
                       {post.tags?.map((tag) => (
                         <span className="badge rounded-pill text-bg-light border" key={tag}>

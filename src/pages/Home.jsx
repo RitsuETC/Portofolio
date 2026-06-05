@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SiteNavbar from "../components/SiteNavbar";
 import "../components/NavbarFixed.css";
 import "../styles/layout.css";
@@ -26,7 +27,7 @@ function Home() {
             <div className="row align-items-center g-5">
               <div className="col-lg-6">
                 <span className="section-tag">Software Developer</span>
-                <h1 className="display-4 fw-bold mt-3 mb-3">
+                <h1 className="display-5 display-md-4 fw-bold mt-3 mb-3">
                   Halo, Saya Zaidan. <br />
                   Membangun Emerge Tech Circle adalah jalanku.
                 </h1>
@@ -36,12 +37,12 @@ function Home() {
                   desain dengan kode yang bersih dan efisien.
                 </p>
                 <div className="d-flex flex-wrap gap-3">
-                  <a className="btn btn-dark btn-lg" href="#/experience">
+                  <Link className="btn btn-dark btn-lg" to="/experience">
                     Lihat Pengalaman
-                  </a>
-                  <a className="btn btn-outline-dark btn-lg" href="#/project">
+                  </Link>
+                  <Link className="btn btn-outline-dark btn-lg" to="/project">
                     Koleksi Project
-                  </a>
+                  </Link>
                 </div>
               </div>
 
